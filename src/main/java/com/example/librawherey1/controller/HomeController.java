@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 
-@Controller
+@Controller("/")
 @RequestMapping("/home")
 public class HomeController {
 
