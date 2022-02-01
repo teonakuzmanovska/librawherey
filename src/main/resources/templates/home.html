@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!--mapbox-->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- Turf.js plugin -->
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+</head>
+
+<!--Header-->
+
+<body>
+<section id="nav-bar">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand"><img th:src="@{/images/logo.png}"></a>
+            <button class="navbar-toggler btn-outline-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{/home}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/aboutus}">About-us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/contact}">Contact us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/help}">Help</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</section>
+
+<!-- Selection part -->
+
+<section id="selectpart">
+    <div class="container">
+        <div class=" d-flex justify-content-center align-items-center">
+
+<!--Selecting school-->
+                    <select id="options" class="form-select w-25 py-2 my-3 btn-success">
+                        <option selected="selected">Choose your school</option>
+                        <option th:each="school : ${schools}" th:value="${school}">
+                            <th:block th:text="${school.name}"></th:block>
+                        </option>
+                    </select>
+
+        </div>
+
+<!--Hidden form for passing lon and lat to controller-->
+
+        <div class=" d-flex justify-content-center align-items-center">
+            <input type="button" onclick="displayLibraries()" value="Upon selection click me, then SUBMIT">
+        </div>
+
+        <div class=" d-flex justify-content-center align-items-center my-3">
+            <form method="post" action="/libraries">
+                <div id="forma"></div>
+                <input type="submit">
+            </form>
+        </div>
+
+    </div>
+
+</section>
+
+<!--Map-->
+
+<section>
+    <div class="container">
+        <div class="sidebar">
+            <div class="heading">
+                <h4>Our locations</h4>
+            </div>
+            <div id="listings" class="listings"></div>
+        </div>
+        <div id="map" class="map" style="width: 700px; height:265px"></div>
+
+    </div>
+
+    <script src="/js/map.js">
+
+    </script>
+</section>
+
+<!--JS for sending coordinates to hidden form-->
+
+<script src="js/lat_lon.js" th:inline="javascript">
+
+</script>
+
+</body>
+</html>

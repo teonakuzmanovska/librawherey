@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+    font-size: 20px;
+}
+#nav-bar{
+    background-image: linear-gradient(to right, #bce7a6, #4cbb17);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.navbar {
+    padding: 0;
+    height: 100px;
+}
+.navbar-brand img{
+    height: 60px;
+    padding-left: 20px;
+}
+.navbar-nav li {
+    padding: 0 10px;
+}
+.navbar a{
+    font-size: 18px;
+    color: White;
+    font-weight: 400;
+    float: right;
+    text-align: left;
+}
+.nav-bars li:hover{
+    background-color: pink;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+.navbar-toggler{
+    outline: none;
+}
+
+#footer{
+    background-image: linear-gradient(to right, #bce7a6, #4cbb17);
+    color: white;
+}
+#footer li a{
+    color: white;
+}
+.footer-box{
+    padding: 5px;
+}
+.sidebar {
+    position: absolute;
+    /*width: 33.3333%;*/
+    width: 180px;
+    height: 250px;
+    /*top: 50px;*/
+    left: 300px;
+    overflow: hidden;
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+}
+.map {
+    position: absolute;
+    width: 500px;
+    left: 361px;
+    top: 0;
+    bottom: 0;
+}
+
+.heading {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    height: 60px;
+    line-height: 30px;
+    padding: 0 5px;
+}
+
+.listings {
+    height: 200px;
+    overflow: auto;
+    /*padding-bottom: 60px;*/
+}
+
+.listings .item {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.listings .item:last-child { border-bottom: none; }
+
+.listings .item .title {
+    display: block;
+    color: #45c581;
+    font-weight: 700;
+}
+
+.listings .item .title small { font-weight: 400; }
+
+.listings .item.active .title,
+.listings .item .title:hover { color: #8cc63f; }
+
+.listings .item.active {
+    background-color: #f8f8f8;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    border-left: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3dd081;
+    border-radius: 0;
+}
+
+/* Marker tweaks */
+.mapboxgl-popup-close-button {
+    display: none;
+}
+
+.mapboxgl-popup-content {
+    font-size: 14px;
+    padding: 0;
+    width: 150px;
+    overflow: auto;
+}
+
+.mapboxgl-popup-content h5 {
+    background: #91c949;
+    color: #fff;
+    margin: 0;
+    padding: 10px;
+    border-radius: 3px 3px 0 0;
+    font-weight: 70;
+    margin-top: -15px;
+    /*overflow: visible;*/
+}
+
+.mapboxgl-popup-content h6 {
+    margin: 0;
+    padding: 10px;
+    font-weight: 40;
+    overflow: visible;
+    overflow-wrap: break-word;
+}
+
+.mapboxgl-popup-content div {
+    padding: 10px;
+}
+
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
+    margin-top: 15px;
+}
+
+.mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
+    border-bottom-color: #91c949;
+}
