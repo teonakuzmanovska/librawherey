@@ -10,7 +10,7 @@ services:
     environment:
       - POSTGRES_USER=librawherey
       - POSTGRES_PASSWORD=dataBasehw3
-      - POSTGRES_DB=dians
+      - POSTGRES_DB=d2ns1ej8jkgmda
     #   Maps port 5432 (localhost) to port 5432 on the container. You can change the ports to fix your needs.
     ports:
       - "5432:5432"
