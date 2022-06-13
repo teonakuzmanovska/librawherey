@@ -73,14 +73,10 @@
 
 <!--Hidden form for passing lon and lat to controller-->
 
-        <div class=" d-flex justify-content-center align-items-center">
-            <input type="button" onclick="displayLibraries()" value="Upon selection click me, then SUBMIT">
-        </div>
-
         <div class=" d-flex justify-content-center align-items-center my-3">
             <form method="post" action="/libraries">
                 <div id="forma"></div>
-                <input type="submit">
+                <button class="btn btn-success" type="submit" onclick="displayLibraries()">submit</button>
             </form>
         </div>
 
