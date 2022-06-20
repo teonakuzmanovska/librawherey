@@ -8,8 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 
-@Controller("/")
-@RequestMapping("/home")
+@Controller
+@RequestMapping({"/", "/home"})
 public class HomeController {
 
     private SchoolsService schoolsService;
